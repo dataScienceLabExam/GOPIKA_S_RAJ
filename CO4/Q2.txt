@@ -1,0 +1,94 @@
+package arithmetic;
+
+import java.util.Scanner;
+
+/*Create an Arithmetic package that has classes and interfaces for the 4 basic arithmetic
+operations. Test the package by implementing all operations on two given numbers*/
+interface addition{
+	public void perform1(int a,int b);
+}
+class  addi implements addition{
+	public void perform1(int a,int b) {
+		System.out.println("the addition result is" +(a+b));
+		
+		
+	}
+}
+interface subtraction {
+	public void perform2(int c,int d);
+}
+class sub implements subtraction{
+	public void perform2(int c,int d) {
+		System.out.println("the subtraction result is" +(c-d));
+	}
+}
+interface multiplication{
+	public void perform3(int e,int f);
+}
+ class  multipl implements multiplication{
+
+	public void perform3(int e,int f) {
+		System.out.println("the addition result is" +e*f);
+		
+		
+	}
+
+}
+ interface division{
+	 public void perform4(int g,int h);
+ }
+ class divi implements division{
+	 public void perform4(int g,int h) {
+		 System.out.println("the division result is" +g/h);
+		 
+	 }
+	 
+ }
+	
+
+public class operations {
+
+	public static void main(String[] args) {
+		addi obj1=new addi();
+		sub obj2=new sub();
+		multipl obj3=new multipl();
+		divi obj4=new divi();
+		Scanner sc = new Scanner(System.in) ;
+		int ch;
+		System.out.println("the operations are \n 1.addition \n 2.subtraction\n 3.multiplication\n 4.division");
+		do {
+			System.out.println("enter the choice");
+			ch=sc.nextInt();
+			switch(ch) {
+			case 1:System.out.println("enter the first number");
+			      int p=sc.nextInt();
+			      System.out.println("enter the second number");
+			      int q=sc.nextInt();
+			      obj1.perform1(p,q);
+			      break;
+			case 2:System.out.println("enter the first number");
+		           int p1=sc.nextInt();
+		           System.out.println("enter the second number");
+		           int q1=sc.nextInt();
+		           obj2.perform2(p1,q1);
+			       break;
+			case 3:System.out.println("enter the first number");
+	              int p2=sc.nextInt();
+	              System.out.println("enter the second number");
+	              int q2=sc.nextInt();
+	              obj3.perform3(p2,q2);
+		          break;
+			case 4:System.out.println("enter the first number");
+	               int p3=sc.nextInt();
+	               System.out.println("enter the second number");
+	               int q3=sc.nextInt();
+	               obj4.perform4(p3,q3);
+		           break;
+			      
+			}
+		}while(ch!=0);
+		
+	}
+
+	
+}
